@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>ShareFuze — AI-Powered NFL Content Production</title>
+  <meta name="description" content="ShareFuze turns your NFL takes into production-ready videos, graphics and stats. One app. Every platform. AI does the heavy lifting.">
+  <meta name="keywords" content="NFL, content creation, AI, video production, sports analytics, graphics, ShareFuze">
+  <meta name="author" content="ShareFuze">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ShareFuze — AI-Powered NFL Content Production">
+  <meta property="og:description" content="Turn your NFL takes into production-ready videos, graphics and stats. One app. Every platform.">
+  <meta property="og:image" content="assets/app-mockup.jpg">
+  <meta property="og:url" content="https://sharefuze.com">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ShareFuze — AI-Powered NFL Content Production">
+  <meta name="twitter:description" content="Turn your NFL takes into production-ready videos, graphics and stats.">
+  <meta name="twitter:image" content="assets/app-mockup.jpg">
+
+  <!-- Favicon (uses the logo) -->
+  <link rel="icon" type="image/png" href="assets/logo.png">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background canvas with ambient gradients -->
+  <div class="bg-canvas" aria-hidden="true"></div>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav class="nav" id="main-nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="#" class="nav-brand" aria-label="ShareFuze home">
+        <img src="assets/logo.png" alt="ShareFuze logo" class="nav-logo" width="40" height="40">
+        <span class="nav-name">Share<span>Fuze</span></span>
+      </a>
+
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#waitlist">Early Access</a></li>
+      </ul>
+
+      <a href="#waitlist" class="nav-cta" id="nav-cta-btn">Join Waitlist</a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <header class="hero" id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="dot"></span>
+            Coming Soon
+          </div>
+
+          <h1>
+            Your NFL Takes.<br>
+            <span class="accent">AI-Powered</span><br>
+            Production.
+          </h1>
+
+          <p class="hero-sub">
+            ShareFuze turns your raw ideas into broadcast-quality videos, animated graphics and stat-driven content — all from one app. You create. AI does the heavy lifting.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#waitlist" class="btn-primary" id="hero-cta-btn">
+              Get Early Access
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#features" class="btn-secondary" id="hero-learn-btn">
+              See Features
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-mockup">
+            <img src="assets/app-mockup.jpg" alt="ShareFuze app dashboard showing NFL schedule, live scores, graphics preview and quick stats" width="1400" height="788" loading="eager">
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== STATS BAR ==================== -->
+  <section class="stats-bar" aria-label="Key numbers">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal">
+          <h3 data-count="60" data-suffix="+">0+</h3>
+          <p>Animated Templates</p>
+        </div>
+        <div class="stat-item reveal">
+          <h3 data-count="14" data-suffix="">0</h3>
+          <p>Production Areas</p>
+        </div>
+        <div class="stat-item reveal">
+          <h3 data-count="32" data-suffix="">0</h3>
+          <p>NFL Teams Covered</p>
+        </div>
+        <div class="stat-item reveal">
+          <h3 data-count="7" data-suffix="">0</h3>
+          <p>Platforms Supported</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FEATURES ==================== -->
+  <section class="features" id="features" aria-labelledby="features-title">
+    <div class="container">
+      <span class="section-label reveal">What You Get</span>
+      <h2 class="section-title reveal" id="features-title">Everything to go from idea to post</h2>
+      <p class="section-desc reveal">ShareFuze puts 14 production tools into one app. Find the story, make the graphic, cut the clip, and queue it for every platform.</p>
+
+      <div class="features-grid">
+        <!-- Card 1 -->
+        <article class="feature-card reveal" id="feature-stats">
+          <div class="feature-icon">📊</div>
+          <h3>Stat Hunter</h3>
+          <p>Search, compare and rank NFL stats in seconds. The data comes from nflverse — the same source the analysts use.</p>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="feature-card reveal" id="feature-graphics">
+          <div class="feature-icon">🎨</div>
+          <h3>Graphics Studio</h3>
+          <p>Over 60 animated templates in both 16:9 and 9:16. Choose a template, drop in the stats, and export to OBS or a file.</p>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="feature-card reveal" id="feature-film">
+          <div class="feature-icon">🎬</div>
+          <h3>Film Room</h3>
+          <p>Split game film by play. The score-bug reader finds each play, ranks them by impact, and cuts the clips you pick.</p>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="feature-card reveal" id="feature-gameprep">
+          <div class="feature-icon">🏈</div>
+          <h3>Game Prep</h3>
+          <p>Ten storylines for every game, powered by real data. Know the angles before kickoff — no guesswork.</p>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="feature-card reveal" id="feature-team">
+          <div class="feature-icon">📈</div>
+          <h3>Team Report</h3>
+          <p>About 40 measures for each team, ranked 1 to 32. See strengths, weaknesses and trends at a glance.</p>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="feature-card reveal" id="feature-postkit">
+          <div class="feature-icon">📦</div>
+          <h3>Post Kit</h3>
+          <p>Platform-sized files, captions in your voice, and a checklist for YouTube, TikTok, Shorts, Reels and X. You post — it prepares.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== HOW IT WORKS (Showcase) ==================== -->
+  <section class="showcase" id="how-it-works" aria-labelledby="showcase-title">
+    <div class="container">
+      <span class="section-label reveal">How It Works</span>
+      <h2 class="section-title reveal" id="showcase-title">From stat to screen in three steps</h2>
+      <p class="section-desc reveal">ShareFuze connects research, design and publishing into one flow. No copy-paste, no tab switching, no guesswork.</p>
+
+      <div class="showcase-grid">
+        <div class="showcase-visual reveal">
+          <img src="assets/workflow.jpg" alt="Three-panel workflow: stat research, graphics studio, publishing queue" width="1400" height="788" loading="lazy">
+        </div>
+
+        <div class="showcase-steps">
+          <div class="step reveal">
+            <div class="step-number">1</div>
+            <div>
+              <h3>Find the Story</h3>
+              <p>Search player and team stats, run comparisons, and let the Stat Hunter surface the take your audience wants to hear.</p>
+            </div>
+          </div>
+
+          <div class="step reveal">
+            <div class="step-number">2</div>
+            <div>
+              <h3>Build the Content</h3>
+              <p>Pick a template, feed it the data, and the Graphics Studio renders an animated graphic or a video overlay — ready for OBS or export.</p>
+            </div>
+          </div>
+
+          <div class="step reveal">
+            <div class="step-number">3</div>
+            <div>
+              <h3>Queue for Every Platform</h3>
+              <p>The Post Kit packages your files for YouTube, TikTok, Shorts, Reels and X. It writes captions in your voice. You upload on your schedule.</p>
+            </div>
+          </div>
+
+          <div class="step reveal">
+            <div class="step-number">✦</div>
+            <div>
+              <h3>You Stay in Control</h3>
+              <p>ShareFuze never posts for you. Never. You decide what goes live and when.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CTA / WAITLIST ==================== -->
+  <section class="cta-section" id="waitlist" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="cta-card reveal">
+        <h2 id="cta-title">Get in Early</h2>
+        <p>ShareFuze is in active development. Join the waitlist to lock in early access and help shape the product.</p>
+
+        <form class="waitlist-form" id="waitlist-form" action="#" method="POST">
+          <label for="waitlist-email" class="sr-only">Email address</label>
+          <input type="email" id="waitlist-email" name="email" placeholder="your@email.com" required autocomplete="email">
+          <button type="submit" id="waitlist-submit">Join Waitlist</button>
+        </form>
+
+        <p class="waitlist-note">No spam. We'll notify you when early access opens.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="ShareFuze" class="footer-logo" width="32" height="32">
+        <span class="footer-name">ShareFuze</span>
+      </div>
+
+      <p class="footer-copy">&copy; 2026 ShareFuze. All rights reserved.</p>
+
+      <div class="social-links">
+        <a href="#" class="social-link" aria-label="YouTube" id="social-youtube">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="#" class="social-link" aria-label="X (Twitter)" id="social-x">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" class="social-link" aria-label="TikTok" id="social-tiktok">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
