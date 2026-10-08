@@ -128,12 +128,46 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---------- Smooth scroll for anchor links ---------- */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
+      const href = anchor.getAttribute('href');
+      if (href === '#' || href.startsWith('#modal-')) return;
       e.preventDefault();
-      const target = document.querySelector(anchor.getAttribute('href'));
+      const target = document.querySelector(href);
       if (target) {
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
   });
+
+  /* ---------- Legal Modals (Privacy & Terms) ---------- */
+  function setupModal(triggerId, modalId) {
+    const trigger = document.getElementById(triggerId);
+    const modal = document.getElementById(modalId);
+    if (!trigger || !modal) return;
+
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden', 'false');
+    });
+
+    const closeBtn = modal.querySelector('.modal-close-btn');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+      });
+    }
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+      }
+    });
+  }
+
+  setupModal('link-privacy', 'modal-privacy');
+  setupModal('link-terms', 'modal-terms');
+  setupModal('link-security', 'modal-security');
 
 });
