@@ -1,19 +1,10 @@
-# ShareFuze Website
+# ShareFuze website
 
-Static landing page for [sharefuze.com](https://sharefuze.com), hosted on GitHub Pages.
+This static site explains ShareFuze, the AI production studio for NFL creators.
+The page separates working War Room tools, model trials, and plans for AWS.
+GitHub Pages publishes the root of the `main` branch.
 
-## Local Preview
-
-```bash
-# Any simple HTTP server works
-python3 -m http.server 8000
-# Then open http://localhost:8000
-```
-
-## Deploy
-
-Push to the `main` branch of the `sharefuze.github.io` repo (or enable GitHub Pages on any repo pointing to the root of `main`).
-
-## Custom Domain
-
-The `CNAME` file points to `sharefuze.com`. DNS records must point to GitHub Pages — see the deploy guide below.
+Review changes on `aws-ml-site` before the approved merge and publication.
+The `FORM_ENDPOINT` constant sits at the top of [script.js](./script.js).
+An empty value opens an email draft to ceo@sharefuze.com.
+A Formspree form address enables submission and confirms success only after an OK response.

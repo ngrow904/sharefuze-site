@@ -3,392 +3,270 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- SEO -->
-  <title>ShareFuze — AI-Powered NFL Content Production | Built on Anthropic Claude</title>
-  <meta name="description" content="ShareFuze combines Anthropic Claude 3.5 Sonnet reasoning agents with real-time NFL telemetry to generate broadcast-ready videos, graphics and stats. One app. Every platform.">
-  <meta name="keywords" content="NFL, content creation, AI, Claude 3.5 Sonnet, Anthropic, video production, sports analytics, graphics, ShareFuze">
-  <meta name="author" content="ShareFuze Inc.">
-
-  <!-- Open Graph -->
+  <title>ShareFuze: the AI production studio for NFL creators</title>
+  <meta name="description" content="Turn NFL stats, game film and your own takes into graphics, clips and posts. Explore our working tools, machine-learning trials and AWS roadmap. A human approves every post.">
+  <meta name="keywords" content="NFL, content creation, AI, machine learning, video production, sports analytics, graphics, ShareFuze">
+  <meta name="author" content="ShareFuze">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="ShareFuze — AI-Powered NFL Content Production | Built on Anthropic Claude">
-  <meta property="og:description" content="Turn your NFL takes into broadcast-ready videos, graphics and stats using Anthropic Claude 3.5 Sonnet and verified sports telemetry.">
+  <meta property="og:title" content="ShareFuze: the AI production studio for NFL creators">
+  <meta property="og:description" content="NFL stats, game film and a creator's own takes become graphics, clips and posts. Working tools, machine-learning trials and an AWS roadmap. A human approves every post.">
   <meta property="og:image" content="assets/app-mockup.jpg">
   <meta property="og:url" content="https://sharefuze.com">
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ShareFuze — AI-Powered NFL Content Production | Built on Anthropic Claude">
-  <meta name="twitter:description" content="Turn your NFL takes into broadcast-ready videos, graphics and stats with Anthropic Claude 3.5 Sonnet.">
+  <meta name="twitter:title" content="ShareFuze: the AI production studio for NFL creators">
+  <meta name="twitter:description" content="NFL stats, game film and your own takes. Explore working tools, machine-learning trials and our AWS roadmap. A human approves every post.">
   <meta name="twitter:image" content="assets/app-mockup.jpg">
-
-  <!-- Favicon (uses the logo) -->
   <link rel="icon" type="image/png" href="assets/logo.png">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=wr118">
 </head>
 <body>
-
-  <!-- Background canvas with ambient gradients -->
   <div class="bg-canvas" aria-hidden="true"></div>
-
-  <!-- ==================== NAVIGATION ==================== -->
-  <nav class="nav" id="main-nav" role="navigation" aria-label="Main navigation">
+  <nav class="nav" id="main-nav" aria-label="Main navigation">
     <div class="container nav-inner">
-      <a href="#" class="nav-brand" aria-label="ShareFuze home">
+      <a href="#hero" class="nav-brand" aria-label="ShareFuze home">
         <img src="assets/logo.png" alt="ShareFuze logo" class="nav-logo" width="40" height="40">
         <span class="nav-name">Share<span>Fuze</span></span>
       </a>
-
-      <ul class="nav-links" id="nav-links" role="list">
-        <li><a href="#ai-engine">AI Architecture</a></li>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#ml-pipeline">ML pipeline</a></li>
+        <li><a href="#aws-roadmap">AWS roadmap</a></li>
         <li><a href="#features">Features</a></li>
-        <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#waitlist">Early Access</a></li>
+        <li><a href="#waitlist">Early access</a></li>
       </ul>
-
-      <a href="#waitlist" class="nav-cta" id="nav-cta-btn">Join Waitlist</a>
-
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <a href="#waitlist" class="nav-cta">Get early access</a>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Toggle menu" aria-controls="nav-links" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <!-- ==================== HERO ==================== -->
   <header class="hero" id="hero">
-    <div class="container">
-      <div class="hero-grid">
-        <div class="hero-content">
-          <div class="hero-badge">
-            <span class="dot"></span>
-            Built on Anthropic Claude 3.5 Sonnet
-          </div>
-
-          <h1>
-            Your NFL Takes.<br>
-            <span class="accent">Claude-Powered</span><br>
-            Production.
-          </h1>
-
-          <p class="hero-sub">
-            ShareFuze pairs Anthropic Claude 3.5 Sonnet reasoning agents with real-time NFL telemetry. Transform raw game tape, player stats, and editorial takes into broadcast-quality video and graphics — autonomously.
-          </p>
-
-          <div class="hero-actions">
-            <a href="#waitlist" class="btn-primary" id="hero-cta-btn">
-              Get Early Access
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-            <a href="#ai-engine" class="btn-secondary" id="hero-learn-btn">
-              Explore AI Architecture
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
-            </a>
-          </div>
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge"><span class="dot"></span>Building first for our own NFL channel</div>
+        <h1>Your NFL takes.<br><span class="accent">Your AI studio.</span><br>Your final say.</h1>
+        <p class="hero-sub">ShareFuze turns NFL stats, game film and a creator's own takes into finished graphics, clips and posts. A human approves every post. We build it first for our own NFL channel, then open it to other creators.</p>
+        <div class="hero-actions">
+          <a href="#waitlist" class="btn-primary" id="hero-cta-btn">Get early access</a>
+          <a href="#ml-pipeline" class="btn-secondary" id="hero-learn-btn">See the ML pipeline</a>
         </div>
-
-        <div class="hero-visual">
-          <div class="hero-mockup">
-            <img src="assets/app-mockup.jpg" alt="ShareFuze app dashboard showing NFL schedule, live scores, graphics preview and quick stats" width="1400" height="788" loading="eager">
-          </div>
+        <p class="hero-note">Working tools today. Video models in testing. AWS plans below.</p>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-mockup">
+          <img src="assets/app-mockup.jpg" alt="Illustration of the production dashboard" width="1400" height="788" loading="eager">
         </div>
+        <p class="image-note">Product illustration</p>
       </div>
     </div>
   </header>
 
-  <!-- ==================== TECH STACK BANNER ==================== -->
-  <section class="tech-stack" aria-label="Core technology infrastructure">
-    <div class="container">
-      <p class="tech-stack-title">Engineered with modern AI and sports data infrastructure</p>
-      <div class="tech-stack-items">
-        <div class="tech-item">
-          <span class="tech-badge-claude">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-            Anthropic Claude 3.5 Sonnet
-          </span>
-        </div>
-        <div class="tech-item">📊 nflverse Analytics DB</div>
-        <div class="tech-item">🎥 FFmpeg Hardware Acceleration</div>
-        <div class="tech-item">📡 OBS Studio Live Overlays</div>
-        <div class="tech-item">⚡ Cloudflare Edge Compute</div>
-      </div>
+  <section class="stats-bar" aria-label="Tools available in our own app">
+    <div class="container stats-grid">
+      <div class="stat-item"><h3>77</h3><p>Graphics templates</p></div>
+      <div class="stat-item"><h3>32</h3><p>NFL teams</p></div>
+      <div class="stat-item"><h3>6</h3><p>Export platforms</p></div>
     </div>
   </section>
 
-  <!-- ==================== STATS BAR ==================== -->
-  <section class="stats-bar" aria-label="Key numbers">
+  <section class="ai-engine" id="ml-pipeline" aria-labelledby="pipeline-title">
     <div class="container">
-      <div class="stats-grid">
-        <div class="stat-item reveal">
-          <h3 data-count="60" data-suffix="+">0+</h3>
-          <p>Animated Templates</p>
-        </div>
-        <div class="stat-item reveal">
-          <h3 data-count="14" data-suffix="">0</h3>
-          <p>Production Tools</p>
-        </div>
-        <div class="stat-item reveal">
-          <h3 data-count="32" data-suffix="">0</h3>
-          <p>NFL Teams Covered</p>
-        </div>
-        <div class="stat-item reveal">
-          <h3 data-count="7" data-suffix="">0</h3>
-          <p>Target Platforms</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== AI ARCHITECTURE SECTION ==================== -->
-  <section class="ai-engine" id="ai-engine" aria-labelledby="ai-engine-title">
-    <div class="container">
-      <span class="section-label reveal">AI Architecture</span>
-      <h2 class="section-title reveal" id="ai-engine-title">How Anthropic Claude powers the ShareFuze core</h2>
-      <p class="section-desc reveal">Sports creators spend 80% of their time researching stats, framing angles, and cutting clips. ShareFuze embeds Claude 3.5 Sonnet directly into the editorial pipeline to eliminate production bottlenecks while preserving creator agency.</p>
-
+      <span class="section-label reveal">Inside the studio</span>
+      <h2 class="section-title reveal" id="pipeline-title">How we use machine learning</h2>
+      <p class="section-desc reveal">Machine learning (ML) helps turn research into media. The War Room is our own working app for this studio. We test video jobs on Runpod GPUs (graphics processors) and fal.ai.</p>
+      <p class="status-key"><strong>Live:</strong> works in our own app. <strong>In testing:</strong> a trial, not a finished feature. <strong>Planned on AWS:</strong> future work.</p>
+      <ol class="pipeline-flow" aria-label="Production flow">
+        <li>Research</li><li>Script</li><li>Video</li><li>Voice</li><li>Review</li><li>Publish <small>By a human</small></li>
+      </ol>
       <div class="ai-engine-grid">
-        <!-- AI Card 1 -->
-        <article class="ai-card reveal" id="ai-card-synthesis">
-          <span class="ai-tag claude-tag">Claude 3.5 Sonnet API</span>
-          <h3>Multi-Agent Script Synthesis</h3>
-          <p>Specialized Claude reasoning agents parse breaking news, historical records, and team matchup dynamics to compose engaging, platform-native video scripts matching creator voice.</p>
-          <ul class="ai-spec-list">
-            <li>Persona-conditioned tone and pacing controls</li>
-            <li>Automated hook generation for Shorts, Reels, and TikTok</li>
-            <li>Direct factual verification against nflverse schemas</li>
-          </ul>
+        <article class="ai-card reveal">
+          <span class="status-tag status-testing">In testing</span>
+          <h3>Masks and tracking</h3>
+          <p>SAM 3 tracks a selected person on Runpod GPUs so we can cut them out of a clip. SAM 2 is a planned alternative on AWS.</p>
         </article>
-
-        <!-- AI Card 2 -->
-        <article class="ai-card reveal" id="ai-card-context">
-          <span class="ai-tag claude-tag">200K Context Window</span>
-          <h3>Full Game Telemetry Ingestion</h3>
-          <p>Rather than truncating game context, ShareFuze leverages Claude's 200,000-token window to ingest full 60-minute play-by-play logs, NextGen tracking coordinates, and injury histories in a single prompt.</p>
-          <ul class="ai-spec-list">
-            <li>Zero loss of late-game situational nuance</li>
-            <li>Automated score-bug synchronization with video keyframes</li>
-            <li>Cross-season trend detection across 32 teams</li>
-          </ul>
+        <article class="ai-card reveal">
+          <span class="status-tag status-testing">In testing</span>
+          <h3>Person swap in video</h3>
+          <p>Wan 2.1 and Wan 2.2 support person-swap trials through Runpod GPUs and fal.ai. Wan 2.1 VACE is a planned alternative on AWS.</p>
         </article>
-
-        <!-- AI Card 3 -->
-        <article class="ai-card reveal" id="ai-card-tools">
-          <span class="ai-tag claude-tag">Tool Calling & Structured JSON</span>
-          <h3>Autonomous Data Extraction</h3>
-          <p>Claude uses custom tool definitions to query our backend sports statistics databases, returning strictly validated JSON schemas that render directly into SVG and Remotion motion graphics.</p>
-          <ul class="ai-spec-list">
-            <li>Sub-second query-to-render graphics pipeline</li>
-            <li>Deterministic schema enforcement via tool calling</li>
-            <li>Dynamic 16:9 broadcast and 9:16 mobile render outputs</li>
-          </ul>
+        <article class="ai-card reveal">
+          <span class="status-tag status-planned">Planned on AWS</span>
+          <h3>Lip sync</h3>
+          <p>We plan GPU jobs with LatentSync and MuseTalk to match mouth movements to speech. The app already has a local MuseTalk engine on the Mac.</p>
         </article>
-
-        <!-- AI Card 4 -->
-        <article class="ai-card reveal" id="ai-card-governance">
-          <span class="ai-tag">Safety & Provenance</span>
-          <h3>Anti-Hallucination & Editorial Control</h3>
-          <p>Sports analysis demands ironclad credibility. Every statistical assertion produced by the Claude agent pipeline contains a traceable data provenance link, backed by creator sign-off.</p>
-          <ul class="ai-spec-list">
-            <li>Mandatory statistical provenance validation</li>
-            <li>Human-in-the-loop publish approval gate</li>
-            <li>Alignment with Anthropic responsible AI standards</li>
-          </ul>
+        <article class="ai-card reveal">
+          <span class="status-tag status-planned">Planned on AWS</span>
+          <h3>Labelled parody voices</h3>
+          <p>We plan to use Chatterbox, CosyVoice and RVC for parody voices on AWS GPUs. Every parody voice must carry a clear label.</p>
+        </article>
+        <article class="ai-card reveal">
+          <span class="status-tag status-planned">Planned on AWS</span>
+          <h3>Captions</h3>
+          <p>We plan to use Whisper to turn speech into timed captions. AWS GPUs will run this job, with the Mac as a local option.</p>
+        </article>
+        <article class="ai-card reveal">
+          <span class="status-tag status-live">Live</span>
+          <h3>Scripts, angles and fact checks</h3>
+          <p>Claude, GPT and Gemini models help draft scripts and story angles. The app compares numerical claims with saved nflverse evidence before human review.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- ==================== FEATURES ==================== -->
+  <section class="features" id="aws-roadmap" aria-labelledby="roadmap-title">
+    <div class="container">
+      <span class="section-label reveal">Our next steps</span>
+      <h2 class="section-title reveal" id="roadmap-title">Our ML roadmap on AWS</h2>
+      <p class="section-desc reveal">These phases describe future work. We have not moved this pipeline to Amazon Web Services (AWS).</p>
+      <div class="features-grid">
+        <article class="feature-card reveal">
+          <span class="status-tag status-planned">Planned on AWS</span>
+          <h3>Phase 1: foundation</h3>
+          <p>Amazon S3 will store all media. Claude on Amazon Bedrock will help write scripts and check facts.</p>
+          <p>Bedrock embeddings will turn clips and stats into searchable representations, so creators can find related material.</p>
+        </article>
+        <article class="feature-card reveal">
+          <span class="status-tag status-planned">Planned on AWS</span>
+          <h3>Phase 2: GPU pipeline</h3>
+          <p>Amazon EC2 G6e and G6 instances, with NVIDIA L40S and L4 GPUs, will run mask, swap, lip-sync, voice and caption jobs.</p>
+          <p>AWS Batch will queue jobs. AWS Step Functions will chain the steps. We plan to use Spot capacity to reduce costs.</p>
+        </article>
+        <article class="feature-card reveal">
+          <span class="status-tag status-planned">Planned on AWS</span>
+          <h3>Phase 3: our own models</h3>
+          <p>Amazon SageMaker training jobs will train small LoRA adapters, which adapt existing models, and a model that ranks clips.</p>
+          <p>The ranking model will learn from nflverse play-by-play data, including expected points added (EPA) and win probability, to find strong clips.</p>
+        </article>
+      </div>
+      <div class="why-aws">
+        <h3>Why AWS</h3>
+        <p>AWS would put storage, GPUs and models in one place, with Claude on Bedrock next to the media in S3. Managed job queues would help a one-person team avoid running servers. Credits would let us move the GPU work that runs on Runpod today.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="responsible-ai" aria-labelledby="responsible-title">
+    <div class="container">
+      <span class="section-label reveal">Creator in control</span>
+      <h2 class="section-title reveal" id="responsible-title">Responsible AI</h2>
+      <p class="section-desc reveal">These rules guide the working app and every planned feature.</p>
+      <ul class="responsible-list">
+        <li>A human approves every post. ShareFuze never publishes on its own.</li>
+        <li>Every parody voice carries a clear label.</li>
+        <li>Every stat comes from nflverse data, and the fact checker compares claims with it.</li>
+        <li>We do not train models on a creator's footage without that creator's consent.</li>
+      </ul>
+    </div>
+  </section>
+
   <section class="features" id="features" aria-labelledby="features-title">
     <div class="container">
-      <span class="section-label reveal">What You Get</span>
-      <h2 class="section-title reveal" id="features-title">Everything to go from idea to post</h2>
-      <p class="section-desc reveal">ShareFuze consolidates 14 production workflows into one coherent workspace. Find the story, make the graphic, cut the clip, and queue it for every platform.</p>
-
+      <span class="section-label reveal">Working in the War Room</span>
+      <h2 class="section-title reveal" id="features-title">What you get</h2>
+      <p class="section-desc reveal">These tools work in our own app today. Early access for other creators comes next.</p>
       <div class="features-grid">
-        <!-- Card 1 -->
-        <article class="feature-card reveal" id="feature-stats">
-          <div class="feature-icon">📊</div>
-          <h3>Stat Hunter</h3>
-          <p>Search, compare, and rank NFL stats with Claude-assisted natural language queries. Data verified against official nflverse schemas.</p>
+        <article class="feature-card reveal">
+          <span class="status-tag status-live">Live</span><div class="feature-icon" aria-hidden="true">📊</div>
+          <h3>NFL stats</h3><p>Search and compare nflverse stats. Build your take from the numbers.</p>
         </article>
-
-        <!-- Card 2 -->
-        <article class="feature-card reveal" id="feature-graphics">
-          <div class="feature-icon">🎨</div>
-          <h3>Graphics Studio</h3>
-          <p>Over 60 animated templates in 16:9 and 9:16. Ingests Claude structured data outputs to render broadcast-grade motion graphics in seconds.</p>
+        <article class="feature-card reveal">
+          <span class="status-tag status-live">Live</span><div class="feature-icon" aria-hidden="true">🎨</div>
+          <h3>Graphics studio</h3><p>Choose from 77 graphics templates. Prepare graphics for OBS Studio, the recording app, or export them.</p>
         </article>
-
-        <!-- Card 3 -->
-        <article class="feature-card reveal" id="feature-film">
-          <div class="feature-icon">🎬</div>
-          <h3>Film Room</h3>
-          <p>Split game film by play. Computer vision and score-bug tracking detect pivotal moments, ranking clips by leverage and game impact.</p>
+        <article class="feature-card reveal">
+          <span class="status-tag status-live">Live</span><div class="feature-icon" aria-hidden="true">🎥</div>
+          <h3>Studio and live scores</h3><p>Control OBS Studio and recordings from the app. Follow live scores while you work.</p>
         </article>
-
-        <!-- Card 4 -->
-        <article class="feature-card reveal" id="feature-gameprep">
-          <div class="feature-icon">🏈</div>
-          <h3>Game Prep</h3>
-          <p>Claude generates ten predictive storylines for every matchup, backed by situational EPA and historical tendencies. Zero guesswork.</p>
+        <article class="feature-card reveal">
+          <span class="status-tag status-live">Live</span><div class="feature-icon" aria-hidden="true">🏈</div>
+          <h3>Game prep</h3><p>Bring matchup research into one place before you record.</p>
         </article>
-
-        <!-- Card 5 -->
-        <article class="feature-card reveal" id="feature-team">
-          <div class="feature-icon">📈</div>
-          <h3>Team Report</h3>
-          <p>40 efficiency measures for each franchise, ranked 1 to 32. Track defensive EPA, passing success rates, and injury adjustments instantly.</p>
+        <article class="feature-card reveal">
+          <span class="status-tag status-live">Live</span><div class="feature-icon" aria-hidden="true">💬</div>
+          <h3>Ask and check</h3><p>Ask Claude, GPT or Gemini for help. Check numerical claims against your saved evidence before you approve a post.</p>
         </article>
-
-        <!-- Card 6 -->
-        <article class="feature-card reveal" id="feature-postkit">
-          <div class="feature-icon">📦</div>
-          <h3>Post Kit</h3>
-          <p>Platform-sized assets, metadata tags, and Claude-generated captions tailored to YouTube, TikTok, Shorts, Reels, and X.</p>
+        <article class="feature-card reveal">
+          <span class="status-tag status-live">Live</span><div class="feature-icon" aria-hidden="true">📦</div>
+          <h3>Post kit</h3><p>Prepare files and captions for X, YouTube, TikTok, Instagram, Facebook and Threads. You review the kit and post it yourself.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- ==================== HOW IT WORKS (Showcase) ==================== -->
-  <section class="showcase" id="how-it-works" aria-labelledby="showcase-title">
+  <section class="showcase" aria-labelledby="showcase-title">
     <div class="container">
-      <span class="section-label reveal">How It Works</span>
-      <h2 class="section-title reveal" id="showcase-title">From stat to screen in three steps</h2>
-      <p class="section-desc reveal">ShareFuze connects research, design, and publishing into one unified flow. No copy-pasting, no manual spreadsheets, no tab fatigue.</p>
-
-      <div class="showcase-grid">
-        <div class="showcase-visual reveal">
-          <img src="assets/workflow.jpg" alt="Three-panel workflow: stat research, graphics studio, publishing queue" width="1400" height="788" loading="lazy">
-        </div>
-
-        <div class="showcase-steps">
-          <div class="step reveal">
-            <div class="step-number">1</div>
-            <div>
-              <h3>Find the Story</h3>
-              <p>Query team trends and player metrics. Claude 3.5 Sonnet surfaces unexpected angles and statistically compelling takes.</p>
-            </div>
-          </div>
-
-          <div class="step reveal">
-            <div class="step-number">2</div>
-            <div>
-              <h3>Build the Content</h3>
-              <p>Select a template, feed verified telemetry, and our engine renders animated overlays and video cuts ready for OBS or export.</p>
-            </div>
-          </div>
-
-          <div class="step reveal">
-            <div class="step-number">3</div>
-            <div>
-              <h3>Queue for Every Platform</h3>
-              <p>The Post Kit formats files for YouTube, TikTok, Reels, and X, generating tailored descriptions and hashtags in your brand voice.</p>
-            </div>
-          </div>
-
-          <div class="step reveal">
-            <div class="step-number">✦</div>
-            <div>
-              <h3>Creator In Control</h3>
-              <p>ShareFuze never publishes autonomously. You retain full editorial oversight and approve all final outputs.</p>
-            </div>
-          </div>
-        </div>
+      <span class="section-label reveal">Built for our own channel first</span>
+      <h2 class="section-title reveal" id="showcase-title">One workspace, human judgement</h2>
+      <p class="section-desc reveal">Research, make the media, then review it. The final publishing step belongs to the creator.</p>
+      <div class="showcase-visual reveal">
+        <img src="assets/workflow.jpg" alt="Illustration of research, graphics and preparation for publishing" width="1400" height="788" loading="lazy">
+        <p class="image-note">Workflow illustration</p>
       </div>
     </div>
   </section>
 
-  <!-- ==================== CTA / WAITLIST ==================== -->
   <section class="cta-section" id="waitlist" aria-labelledby="cta-title">
     <div class="container">
       <div class="cta-card reveal">
-        <h2 id="cta-title">Get Early Access</h2>
-        <p>ShareFuze is currently onboarding beta creators and sports analysts. Join the waitlist to receive priority access and direct API sandbox testing.</p>
-
-        <form class="waitlist-form" id="waitlist-form" action="#" method="POST">
+        <h2 id="cta-title">Get early access</h2>
+        <p>Get news as we prepare ShareFuze for other NFL creators.</p>
+        <form class="waitlist-form" id="waitlist-form" action="mailto:ceo@sharefuze.com" method="post" enctype="text/plain">
           <label for="waitlist-email" class="sr-only">Email address</label>
-          <input type="email" id="waitlist-email" name="email" placeholder="your@email.com" required autocomplete="email">
-          <button type="submit" id="waitlist-submit">Join Waitlist</button>
+          <input type="email" id="waitlist-email" name="email" placeholder="Your email address" autocomplete="email" required>
+          <button type="submit" class="btn-primary" id="waitlist-submit-btn">Get early access</button>
         </form>
-
-        <p class="waitlist-note">Private beta invites rolling out weekly. No spam.</p>
+        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        <p class="cta-note">We store your email only to send early-access news. No spam.</p>
+        <p class="cta-note">The form opens an email draft until our sign-up service is ready. Send it to <a href="mailto:ceo@sharefuze.com">ceo@sharefuze.com</a>.</p>
       </div>
     </div>
   </section>
 
-  <!-- ==================== FOOTER ==================== -->
-  <footer class="footer" role="contentinfo">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <img src="assets/logo.png" alt="ShareFuze" class="footer-logo" width="32" height="32">
-        <div>
-          <span class="footer-name">ShareFuze</span>
-          <p class="footer-copy">&copy; 2026 ShareFuze Inc. All rights reserved.</p>
-        </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="#hero" class="footer-brand"><img src="assets/logo.png" alt="ShareFuze" width="28" height="28"><span>ShareFuze</span></a>
+        <p class="footer-copy">&copy; 2026 ShareFuze · Jacksonville, Florida</p>
       </div>
-
-      <div class="footer-contact">
-        Founder & Executive: <a href="mailto:CEO@sharefuze.com">CEO@sharefuze.com</a> • <a href="mailto:support@sharefuze.com">support@sharefuze.com</a>
-      </div>
-
-      <ul class="footer-links" role="list">
-        <li><a href="#modal-privacy" id="link-privacy">Privacy Policy</a></li>
-        <li><a href="#modal-terms" id="link-terms">Terms of Service</a></li>
-        <li><a href="#modal-security" id="link-security">Security & AI Safety</a></li>
+      <div class="footer-contact">Contact: <a href="mailto:ceo@sharefuze.com">ceo@sharefuze.com</a> · <a href="mailto:support@sharefuze.com">support@sharefuze.com</a></div>
+      <ul class="footer-links">
+        <li><a href="#modal-privacy" id="link-privacy">Privacy policy</a></li>
+        <li><a href="#modal-terms" id="link-terms">Terms of service</a></li>
+        <li><a href="#modal-security" id="link-security">Security and responsible AI</a></li>
       </ul>
-
-      <div class="social-links">
-        <a href="#" class="social-link" aria-label="YouTube" id="social-youtube">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-        </a>
-        <a href="#" class="social-link" aria-label="X (Twitter)" id="social-x">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-        </a>
-        <a href="#" class="social-link" aria-label="TikTok" id="social-tiktok">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-        </a>
-      </div>
     </div>
   </footer>
 
-  <!-- ==================== MODALS ==================== -->
-  <div class="modal-overlay" id="modal-privacy" aria-hidden="true" role="dialog" aria-labelledby="privacy-heading">
+  <div class="modal-overlay" id="modal-privacy" aria-hidden="true" aria-modal="true" role="dialog" aria-labelledby="privacy-heading" tabindex="-1">
     <div class="modal-box">
-      <button class="modal-close-btn" aria-label="Close dialog">&times;</button>
-      <h2 id="privacy-heading">Privacy Policy</h2>
-      <p><strong>Effective Date:</strong> January 1, 2026 | ShareFuze Inc.</p>
-      <p>ShareFuze respects your privacy. We process creator telemetry, audio inputs, and public sports statistics solely to render media assets and execute AI-assisted workflows requested by the user.</p>
-      <p>We do not sell personal data or use proprietary creator footage to train public foundation models without explicit consent. API communications with Anthropic adhere to enterprise zero-data-retention security protocols.</p>
-      <p>For data inquiries or deletion requests, contact our data protection team at <a href="mailto:CEO@sharefuze.com">CEO@sharefuze.com</a>.</p>
+      <button type="button" class="modal-close-btn" aria-label="Close privacy policy">&times;</button>
+      <h2 id="privacy-heading">Privacy policy</h2>
+      <p><strong>Effective date:</strong> 10 October 2026</p>
+      <p>We collect your sign-up email to send early-access news. Until we enable Formspree, the form opens an email draft to ceo@sharefuze.com. You must send that draft to join.</p>
+      <p>When we enable Formspree, it will process the sign-up email through this form. We do not sell your email.</p>
+      <p>In the app, prompts go to AI model providers, including Anthropic, OpenAI and Google, under their standard API terms. Amazon Bedrock will process prompts when we move to AWS.</p>
+      <p>We do not train models on your footage without your consent. Ask us to delete your email at <a href="mailto:ceo@sharefuze.com">ceo@sharefuze.com</a>.</p>
     </div>
   </div>
-
-  <div class="modal-overlay" id="modal-terms" aria-hidden="true" role="dialog" aria-labelledby="terms-heading">
+  <div class="modal-overlay" id="modal-terms" aria-hidden="true" aria-modal="true" role="dialog" aria-labelledby="terms-heading" tabindex="-1">
     <div class="modal-box">
-      <button class="modal-close-btn" aria-label="Close dialog">&times;</button>
-      <h2 id="terms-heading">Terms of Service</h2>
-      <p><strong>Effective Date:</strong> January 1, 2026 | ShareFuze Inc.</p>
-      <p>By accessing ShareFuze services or joining our early access program, you agree to comply with all applicable copyright and broadcast fair-use guidelines regarding NFL sports footage and commentary.</p>
-      <p>ShareFuze provides assistive AI software. Creators retain complete ownership of their generated video packages and maintain legal responsibility for content published across third-party social networks.</p>
-      <p>Questions regarding licensing and terms may be directed to <a href="mailto:CEO@sharefuze.com">CEO@sharefuze.com</a>.</p>
+      <button type="button" class="modal-close-btn" aria-label="Close terms of service">&times;</button>
+      <h2 id="terms-heading">Terms of service</h2>
+      <p><strong>Effective date:</strong> 10 October 2026</p>
+      <p>Follow applicable copyright and fair-use rules for NFL footage and commentary when you use ShareFuze.</p>
+      <p>Creators keep ownership of their content and remain responsible for what they publish. ShareFuze provides tools to help them make and review it.</p>
+      <p>Ask about these terms at <a href="mailto:ceo@sharefuze.com">ceo@sharefuze.com</a>.</p>
     </div>
   </div>
-
-  <div class="modal-overlay" id="modal-security" aria-hidden="true" role="dialog" aria-labelledby="security-heading">
+  <div class="modal-overlay" id="modal-security" aria-hidden="true" aria-modal="true" role="dialog" aria-labelledby="security-heading" tabindex="-1">
     <div class="modal-box">
-      <button class="modal-close-btn" aria-label="Close dialog">&times;</button>
-      <h2 id="security-heading">Security & Responsible AI Architecture</h2>
-      <p>ShareFuze is committed to enterprise model safety, determinism, and data security.</p>
-      <p>Our agent pipelines leverage Anthropic Claude 3.5 Sonnet using encrypted API channels with strict input sanitization and schema enforcement. System guardrails verify statistical facts against official sports registries to eliminate hallucinations before rendering.</p>
-      <p>Security vulnerabilities may be reported directly to <a href="mailto:CEO@sharefuze.com">CEO@sharefuze.com</a>.</p>
+      <button type="button" class="modal-close-btn" aria-label="Close security and responsible AI">&times;</button>
+      <h2 id="security-heading">Security and responsible AI</h2>
+      <p>We check stats against nflverse data before a human approves the post. AI checks can miss errors, so the creator reviews the result.</p>
+      <p>ShareFuze never publishes on its own. Parody voices must carry clear labels. We do not train on a creator's footage without consent.</p>
+      <p>Report a security issue to <a href="mailto:ceo@sharefuze.com">ceo@sharefuze.com</a>.</p>
     </div>
   </div>
-
-  <!-- Scripts -->
-  <script src="script.js"></script>
+  <script src="script.js?v=wr118"></script>
 </body>
 </html>

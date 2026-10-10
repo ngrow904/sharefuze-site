@@ -1,173 +1,144 @@
-/* ============================================================
-   ShareFuze Landing Page — Interactive Behaviour
-   ============================================================ */
+const FORM_ENDPOINT = '';
 
+/* ShareFuze landing page behaviour. */
 document.addEventListener('DOMContentLoaded', () => {
-
-  /* ---------- Navbar scroll effect ---------- */
   const nav = document.querySelector('.nav');
-  const scrollThreshold = 60;
-
   function handleScroll() {
-    if (window.scrollY > scrollThreshold) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
+    nav.classList.toggle('scrolled', window.scrollY > 60);
   }
-
   window.addEventListener('scroll', handleScroll, { passive: true });
-  handleScroll(); // run once on load
+  handleScroll();
 
-  /* ---------- Mobile nav toggle ---------- */
   const toggle = document.getElementById('nav-toggle');
-  const links  = document.getElementById('nav-links');
-
-  if (toggle && links) {
-    toggle.addEventListener('click', () => {
-      links.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', links.classList.contains('open'));
+  const links = document.getElementById('nav-links');
+  toggle.addEventListener('click', () => {
+    links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(links.classList.contains('open')));
+  });
+  links.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
     });
+  });
 
-    // Close menu when a link is clicked
-    links.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        links.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-      });
-    });
-  }
-
-  /* ---------- Scroll reveal (IntersectionObserver) ---------- */
-  const revealEls = document.querySelectorAll('.reveal');
-
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if ('IntersectionObserver' in window && !reducedMotion) {
+    document.documentElement.classList.add('js-ready');
+    const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
           observer.unobserve(entry.target);
         }
       });
-    }, {
-      threshold: 0.15,
-      rootMargin: '0px 0px -40px 0px'
-    });
-
-    revealEls.forEach((el, i) => {
-      el.style.transitionDelay = `${i * 0.08}s`;
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach((el, i) => {
+      el.style.transitionDelay = `${(i % 3) * 0.08}s`;
       observer.observe(el);
     });
-  } else {
-    // Fallback: show everything
-    revealEls.forEach(el => el.classList.add('visible'));
   }
 
-  /* ---------- Animated stat counters ---------- */
-  const statEls = document.querySelectorAll('[data-count]');
+  const form = document.getElementById('waitlist-form');
+  const email = document.getElementById('waitlist-email');
+  const btn = form.querySelector('button');
+  const status = document.getElementById('form-status');
+  const errorText = 'Could not join the list. Email ceo@sharefuze.com for early access.';
 
-  function animateCount(el) {
-    const target = parseInt(el.getAttribute('data-count'), 10);
-    const suffix = el.getAttribute('data-suffix') || '';
-    const prefix = el.getAttribute('data-prefix') || '';
-    const duration = 2000;
-    const start = performance.now();
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    if (btn.disabled || !form.reportValidity()) return;
+    const address = email.value.trim();
+    if (!address) return;
 
-    function tick(now) {
-      const elapsed = now - start;
-      const progress = Math.min(elapsed / duration, 1);
-      // Ease out quart
-      const ease = 1 - Math.pow(1 - progress, 4);
-      const current = Math.round(target * ease);
-      el.textContent = prefix + current.toLocaleString() + suffix;
-      if (progress < 1) requestAnimationFrame(tick);
+    if (!FORM_ENDPOINT) {
+      status.textContent = 'Send the email draft to join. If it does not open, email ceo@sharefuze.com.';
+      const subject = encodeURIComponent('ShareFuze early access');
+      const body = encodeURIComponent(`Please send me ShareFuze early-access news.\nEmail: ${address}`);
+      window.location.href = `mailto:ceo@sharefuze.com?subject=${subject}&body=${body}`;
+      return;
     }
 
-    requestAnimationFrame(tick);
-  }
+    if (!/^https:\/\/formspree\.io\/f\/[a-zA-Z0-9]+$/.test(FORM_ENDPOINT)) {
+      status.textContent = errorText;
+      return;
+    }
 
-  if ('IntersectionObserver' in window && statEls.length > 0) {
-    const statObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          animateCount(entry.target);
-          statObserver.unobserve(entry.target);
-        }
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    status.textContent = '';
+    try {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new URLSearchParams({ email: address })
       });
-    }, { threshold: 0.5 });
+      if (!response.ok) throw new Error('Sign-up failed');
+      status.textContent = 'Thanks, you are on the list';
+      form.reset();
+    } catch {
+      status.textContent = errorText;
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Get early access';
+    }
+  });
 
-    statEls.forEach(el => statObserver.observe(el));
-  }
-
-  /* ---------- Waitlist form handler ---------- */
-  const form = document.getElementById('waitlist-form');
-
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const email = form.querySelector('input[type="email"]');
-      const btn   = form.querySelector('button');
-
-      if (email && email.value) {
-        btn.textContent = '✓ You\'re In!';
-        btn.style.background = 'linear-gradient(135deg, var(--brand-teal), #00c4c2)';
-        email.value = '';
-        email.disabled = true;
-        btn.disabled = true;
-
-        setTimeout(() => {
-          btn.textContent = 'Join Waitlist';
-          btn.style.background = '';
-          email.disabled = false;
-          btn.disabled = false;
-        }, 4000);
-      }
-    });
-  }
-
-  /* ---------- Smooth scroll for anchor links ---------- */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', (e) => {
+    anchor.addEventListener('click', e => {
       const href = anchor.getAttribute('href');
-      if (href === '#' || href.startsWith('#modal-')) return;
+      if (href.startsWith('#modal-')) return;
+      const target = document.getElementById(href.slice(1));
+      if (!target) return;
       e.preventDefault();
-      const target = document.querySelector(href);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      target.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
     });
   });
 
-  /* ---------- Legal Modals (Privacy & Terms) ---------- */
   function setupModal(triggerId, modalId) {
     const trigger = document.getElementById(triggerId);
     const modal = document.getElementById(modalId);
-    if (!trigger || !modal) return;
+    const closeBtn = modal.querySelector('.modal-close-btn');
+    let previousFocus;
 
-    trigger.addEventListener('click', (e) => {
+    function close() {
+      modal.classList.remove('active');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
+      if (previousFocus) previousFocus.focus();
+    }
+    trigger.addEventListener('click', e => {
       e.preventDefault();
+      previousFocus = document.activeElement;
       modal.classList.add('active');
       modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+      closeBtn.focus();
     });
-
-    const closeBtn = modal.querySelector('.modal-close-btn');
-    if (closeBtn) {
-      closeBtn.addEventListener('click', () => {
-        modal.classList.remove('active');
-        modal.setAttribute('aria-hidden', 'true');
-      });
-    }
-
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.classList.remove('active');
-        modal.setAttribute('aria-hidden', 'true');
+    closeBtn.addEventListener('click', close);
+    modal.addEventListener('click', e => {
+      if (e.target === modal) close();
+    });
+    modal.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        close();
+      }
+      if (e.key === 'Tab') {
+        const focusable = [...modal.querySelectorAll('button, a[href]')];
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
       }
     });
   }
-
   setupModal('link-privacy', 'modal-privacy');
   setupModal('link-terms', 'modal-terms');
   setupModal('link-security', 'modal-security');
-
 });
